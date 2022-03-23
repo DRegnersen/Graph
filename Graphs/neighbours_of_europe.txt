@@ -1,0 +1,50 @@
+Albania,Greece,North Macedonia,Montenegro
+Andorra,France,Spain
+Armenia,Azerbaijan,Georgia,Turkey
+Austria,Czech Republic,Germany,Hungary,Italy,Liechtenstein,Slovakia,Slovenia,Switzerland
+Azerbaijan,Armenia,Georgia,Russia,Turkey
+Belarus,Latvia,Lithuania,Poland,Russia,Ukraine
+Belgium,France,Germany,Luxembourg,Netherlands
+Bosnia and Herzegovina,Croatia,Montenegro,Serbia
+Bulgaria,Greece,North Macedonia,Romania,Serbia,Turkey
+Croatia,Bosnia and Herzegovina,Hungary,Montenegro,Serbia,Slovenia
+Cyprus,United Kingdom
+Czech Republic,Austria,Germany,Poland,Slovakia
+Denmark,Germany
+Estonia,Latvia,Russia
+Finland,Norway,Sweden,Russia
+France,Andorra,Belgium,Germany,Italy,Luxembourg,Monaco,Netherlands,Spain,Switzerland
+Georgia,Armenia,Azerbaijan,Russia,Turkey
+Germany,Austria,Belgium,Czech Republic,Denmark,France,Luxembourg,Netherlands,Poland,Switzerland
+Greece,Albania,Bulgaria,Turkey,North Macedonia
+Hungary,Austria,Croatia,Romania,Serbia,Slovakia,Slovenia,Ukraine
+Iceland
+Ireland,United Kingdom
+Italy,Austria,France,San Marino,Slovenia,Switzerland,Vatican City
+Kazakhstan,Russia
+Latvia,Belarus,Estonia,Lithuania,Russia
+Liechtenstein,Austria,Switzerland
+Lithuania,Belarus,Latvia,Poland,Russia
+Luxembourg,Belgium,France,Germany
+Malta
+Moldova,Romania,Ukraine
+Monaco,France
+Montenegro,Albania,Bosnia and Herzegovina,Croatia,Serbia
+Netherlands,Belgium,Germany,France
+North Macedonia,Albania,Bulgaria,Greece,Serbia
+Norway,Finland,Sweden,Russia
+Poland,Belarus,Czech Republic,Germany,Lithuania,Russia,Slovakia,Ukraine
+Portugal,Spain
+Romania,Bulgaria,Hungary,Moldova,Serbia,Ukraine
+Russia,Azerbaijan,Belarus,Estonia,Finland,Georgia,Kazakhstan,Latvia,Lithuania,Norway,Poland,Ukraine
+San Marino,Italy
+Serbia,Bosnia and Herzegovina,Bulgaria,Croatia,Hungary,North Macedonia,Montenegro,Romania
+Slovakia,Austria,Czech Republic,Hungary,Poland,Ukraine
+Slovenia,Austria,Croatia,Italy,Hungary
+Spain,Andorra,France,United Kingdom,Portugal
+Sweden,Finland,Norway
+Switzerland,Austria,France,Italy,Liechtenstein,Germany
+Turkey,Armenia,Azerbaijan,Bulgaria,Georgia,Greece
+Ukraine,Belarus,Hungary,Moldova,Poland,Romania,Russia,Slovakia
+United Kingdom,Cyprus,Ireland,Spain
+Vatican City,Italy

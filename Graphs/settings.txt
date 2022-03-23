@@ -1,0 +1,2 @@
+graph += donetsk_edition
+graph += file block_cut
