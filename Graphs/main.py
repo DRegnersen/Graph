@@ -190,15 +190,14 @@ if "create_edge_list" in settings:
     edge_list_file.close()
 
 # 'weighted_graph' is actually the largest connected component
-
 weighted_graph = nx.read_weighted_edgelist("weighted_edge_list.txt", delimiter=",")
 
 if "donetsk_edition" in settings:
     weighted_donetsk_edition()
 
-if "spanning_tree" in settings:
-    spanning_tree = nx.minimum_spanning_tree(weighted_graph)
+spanning_tree = nx.minimum_spanning_tree(weighted_graph)
 
+if "spanning_tree" in settings:
     plt.close()
     plt.figure(figsize=(17, 15))
 
@@ -207,3 +206,36 @@ if "spanning_tree" in settings:
 
     plt.savefig("spanning_tree\\ST " + current_time + ".png")
     print("File 'ST " + current_time + ".png' was successfully created")
+
+if "info" in settings:
+    weight_values = {}
+
+    for begin in spanning_tree.nodes():
+        value = 0
+
+        for end in spanning_tree.neighbors(begin):
+            graph_copy = nx.Graph.copy(spanning_tree)
+
+            local_value = graph_copy[begin][end]["weight"]
+
+            graph_copy.remove_edge(begin, end)
+
+            for edge in nx.bfs_edges(graph_copy, end):
+                local_value += graph_copy[edge[0]][edge[1]]["weight"]
+
+            value = max(value, local_value)
+
+        weight_values[begin] = value
+
+    print("Centroid:", min(weight_values, key=weight_values.get))
+
+    compliance = {}
+
+    idx = 0
+    for vertex in spanning_tree.nodes():
+        compliance[vertex] = idx
+        idx += 1
+
+    numeric_spanning_tree = nx.relabel_nodes(spanning_tree, compliance)
+
+    print("Prufer code:", *nx.to_prufer_sequence(numeric_spanning_tree))
