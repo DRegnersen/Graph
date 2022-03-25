@@ -1,0 +1,96 @@
+Albania,Greece,653
+Albania,North Macedonia,243
+Albania,Montenegro,153
+Greece,Bulgaria,731
+Greece,Turkey,975
+Greece,North Macedonia,634
+North Macedonia,Bulgaria,212
+North Macedonia,Serbia,431
+Montenegro,Bosnia and Herzegovina,245
+Montenegro,Croatia,595
+Montenegro,Serbia,412
+Andorra,France,848
+Andorra,Spain,608
+France,Belgium,283
+France,Germany,989
+France,Italy,1369
+France,Luxembourg,330
+France,Monaco,852
+France,Netherlands,480
+France,Spain,1200
+France,Switzerland,509
+Spain,Portugal,596
+Spain,United Kingdom,1504
+Armenia,Azerbaijan,596
+Armenia,Georgia,262
+Armenia,Turkey,1364
+Azerbaijan,Georgia,540
+Azerbaijan,Russia,2772
+Azerbaijan,Turkey,1821
+Georgia,Russia,2242
+Georgia,Turkey,1329
+Turkey,Bulgaria,989
+Austria,Czech Republic,287
+Austria,Germany,586
+Austria,Hungary,241
+Austria,Italy,1032
+Austria,Liechtenstein,612
+Austria,Slovakia,64
+Austria,Slovenia,343
+Austria,Switzerland,785
+Czech Republic,Germany,324
+Czech Republic,Poland,580
+Czech Republic,Slovakia,327
+Germany,Belgium,715
+Germany,Denmark,420
+Germany,Luxembourg,676
+Germany,Netherlands,639
+Germany,Poland,552
+Germany,Switzerland,859
+Hungary,Croatia,344
+Hungary,Romania,763
+Hungary,Serbia,350
+Hungary,Slovakia,185
+Hungary,Slovenia,438
+Hungary,Ukraine,1062
+Italy,San Marino,297
+Italy,Slovenia,709
+Italy,Switzerland,950
+Italy,Vatican City,5
+Liechtenstein,Switzerland,199
+Slovakia,Poland,607
+Slovakia,Ukraine,1169
+Slovenia,Croatia,140
+Russia,Belarus,739
+Russia,Estonia,1003
+Russia,Finland,1091
+Russia,Kazakhstan,2636
+Russia,Latvia,907
+Russia,Lithuania,877
+Russia,Norway,1896
+Russia,Poland,1262
+Russia,Ukraine,840
+Belarus,Latvia,452
+Belarus,Lithuania,189
+Belarus,Poland,535
+Belarus,Ukraine,529
+Latvia,Estonia,306
+Latvia,Lithuania,291
+Lithuania,Poland,434
+Poland,Ukraine,750
+Ukraine,Moldova,463
+Ukraine,Romania,874
+Belgium,Luxembourg,197
+Belgium,Netherlands,201
+Bosnia and Herzegovina,Croatia,362
+Bosnia and Herzegovina,Serbia,260
+Croatia,Serbia,421
+Serbia,Bulgaria,422
+Serbia,Romania,577
+Bulgaria,Romania,354
+Romania,Moldova,425
+Cyprus,United Kingdom,2369
+United Kingdom,Ireland,531
+Finland,Norway,964
+Finland,Sweden,486
+Norway,Sweden,517

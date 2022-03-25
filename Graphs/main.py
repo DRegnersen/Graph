@@ -11,6 +11,7 @@ for line in file:
         for parameter in args[2:]:
             if parameter not in settings:
                 settings[parameter] = 1
+file.close()
 
 
 def donetsk_edition():
@@ -19,6 +20,14 @@ def donetsk_edition():
     graph.add_edge("Ukraine", "Luhansk People's Republic")
     graph.add_edge("Ukraine", "Donetsk People's Republic")
     graph.add_edge("Luhansk People's Republic", "Donetsk People's Republic")
+
+
+def weighted_donetsk_edition():
+    weighted_graph.add_edge("Russia", "Luhansk People's Republic", weight=924)
+    weighted_graph.add_edge("Russia", "Donetsk People's Republic", weight=1010)
+    weighted_graph.add_edge("Ukraine", "Luhansk People's Republic", weight=772)
+    weighted_graph.add_edge("Ukraine", "Donetsk People's Republic", weight=667)
+    weighted_graph.add_edge("Luhansk People's Republic", "Donetsk People's Republic", weight=146)
 
 
 graph = nx.read_adjlist("neighbours_of_europe.txt", delimiter=",")
@@ -30,18 +39,17 @@ plt.figure(figsize=(17, 15))
 
 nx.draw_planar(graph, with_labels=True, node_color="#cfc8f9", edge_color="#6a5acd")
 
-if "file" in settings:
+if "image" in settings:
     current_time = str(datetime.datetime.now())[:-7].replace(":", ".")
 
     plt.savefig("countries_of_europe\\EU " + current_time + ".png")
     print("File 'EU " + current_time + ".png' was successfully created")
 
+graph_cc = sorted(nx.connected_components(graph), key=len, reverse=True)
+max_subgraph = graph.subgraph(graph_cc[0])
+
 if "info" in settings:
     print("=== INFO ===")
-
-    graph_cc = sorted(nx.connected_components(graph), key=len, reverse=True)
-    max_subgraph = graph.subgraph(graph_cc[0])
-
     print("Number of nodes:", max_subgraph.number_of_nodes())
     print("Number of edges:", max_subgraph.number_of_edges())
 
@@ -138,10 +146,64 @@ if "block_cut" in settings:
     plt.close()
     nx.draw_planar(block_cut_graph, with_labels=False, node_color="#00ff7f", edge_color="#00cc7a")
     current_time = str(datetime.datetime.now())[:-7].replace(":", ".")
-
     plt.savefig("block_cut\\BC " + current_time + ".png")
     print("File 'BC " + current_time + ".png' was successfully created")
 
 if "info" in settings:
     print("Blocks:", blocks)
     print("2-edge-connected components:", list(nx.k_edge_components(graph, 2)))
+
+if "sage_file" in settings:
+    max_block = max(blocks, key=len)
+    isFirst = True
+
+    sage_file = open("sage_file.txt", "w")
+    sage_file.write("{")
+    for begin in max_block:
+        if not isFirst:
+            sage_file.write(", ")
+        else:
+            isFirst = False
+
+        sage_file.write("\'" + str(begin).replace("\'", "") + "\':[")
+        flag = True
+
+        for end in graph.neighbors(begin):
+            if end in max_block:
+                if not flag:
+                    sage_file.write(", ")
+                else:
+                    flag = False
+                sage_file.write("\'" + str(end).replace("\'", "") + "\'")
+
+        sage_file.write("]")
+    sage_file.write("}")
+
+    print("File 'sage_file.txt' was successfully created")
+    sage_file.close()
+
+if "create_edge_list" in settings:
+    edge_list_file = open("edge_list.txt", "wb")
+    nx.write_weighted_edgelist(graph, edge_list_file)
+
+    print("File 'edge_list.txt' was successfully created")
+    edge_list_file.close()
+
+# 'weighted_graph' is actually the largest connected component
+
+weighted_graph = nx.read_weighted_edgelist("weighted_edge_list.txt", delimiter=",")
+
+if "donetsk_edition" in settings:
+    weighted_donetsk_edition()
+
+if "spanning_tree" in settings:
+    spanning_tree = nx.minimum_spanning_tree(weighted_graph)
+
+    plt.close()
+    plt.figure(figsize=(17, 15))
+
+    nx.draw_planar(spanning_tree, with_labels=True, node_color="#87CEFA", edge_color="#45b5f8")
+    current_time = str(datetime.datetime.now())[:-7].replace(":", ".")
+
+    plt.savefig("spanning_tree\\ST " + current_time + ".png")
+    print("File 'ST " + current_time + ".png' was successfully created")
