@@ -131,20 +131,25 @@ if "info" in settings:
     print("Shortest closed walk visiting every edge:", shortest_eulerian)
 
 blocks = list(nx.biconnected_components(graph))
-block_cut_graph = nx.Graph()
+block_cut_tree = nx.Graph()
 
-for node in range(0, len(blocks)):
-    block_cut_graph.add_node(node)
+visited = [1]
+vertex_idx = 1
 
-for begin in range(0, len(blocks)):
-    for current in blocks[begin]:
-        for end in range(0, len(blocks)):
-            if begin != end and current in blocks[end]:
-                block_cut_graph.add_edge(begin, end)
+for begin in blocks:
+    for country in begin:
+        for end_idx in range(1, len(visited)):
+            if country in visited[end_idx]:
+                if country not in block_cut_tree.nodes:
+                    block_cut_tree.add_node(country)
+                block_cut_tree.add_edge(vertex_idx, country)
+                block_cut_tree.add_edge(end_idx, country)
+    vertex_idx += 1
+    visited.append(begin)
 
 if "block_cut" in settings:
     plt.close()
-    nx.draw_planar(block_cut_graph, with_labels=False, node_color="#00ff7f", edge_color="#00cc7a")
+    nx.draw_planar(block_cut_tree, with_labels=False, node_color="#00ff7f", edge_color="#00cc7a")
     current_time = str(datetime.datetime.now())[:-7].replace(":", ".")
     plt.savefig("block_cut\\BC " + current_time + ".png")
     print("File 'BC " + current_time + ".png' was successfully created")
