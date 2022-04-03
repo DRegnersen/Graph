@@ -1,2 +1,2 @@
 graph += donetsk_edition info
-graph += image block_cut spanning_tree
+graph += image
